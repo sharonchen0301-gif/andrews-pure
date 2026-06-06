@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrew's Pure – 100% Peanut Powder</title>
+  <meta name="description" content="Premium single-ingredient peanut powder. No sugar, no salt, no preservatives. 100% pure roasted peanuts. Vegan & Non-GMO." />
+
+  <!-- ======================================================
+       GA4 — Replace G-XXXXXXXXXX with your Measurement ID
+       Get it free at analytics.google.com
+  ====================================================== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+
+    // Track add-to-cart clicks as conversion events
+    function trackPurchaseClick(productName, price) {
+      gtag('event', 'begin_checkout', {
+        currency: 'USD',
+        value: price,
+        items: [{ item_name: productName, price: price, quantity: 1 }]
+      });
+    }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --cream:      #F7F2E8;
+      --parchment:  #EDE4D0;
+      --tan:        #C8A96E;
+      --brown:      #7C5A2E;
+      --dark:       #3A2A14;
+      --green:      #4A6741;
+      --green-lt:   #D4E4D0;
+      --text:       #3A2A14;
+      --muted:      #7A6A50;
+      --white:      #FFFDF7;
+      --serif:      'Playfair Display', Georgia, serif;
+      --sans:       'Lato', sans-serif;
+      --radius:     12px;
+      --shadow:     0 4px 24px rgba(58,42,20,0.10);
+    }
+
+    /* ── RESET ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NOISE TEXTURE OVERLAY ──────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+
+    /* ── NAV ────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,242,232,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--parchment);
+      padding: 0 clamp(1rem, 5vw, 4rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--dark);
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--tan); }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .nav-links a:hover { color: var(--brown); }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 0;
+      overflow: hidden;
+      padding: 0 clamp(1.5rem, 6vw, 6rem);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 80% at 70% 50%, #D4C4A0 0%, var(--cream) 70%);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 2rem 4rem 0;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--tan);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--tan);
+    }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 5vw, 4.4rem);
+      line-height: 1.1;
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--brown);
+    }
+    .hero-subtitle {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 1.8rem;
+    }
+    .hero-features {
+      list-style: none;
+      margin-bottom: 2.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+    .hero-features li {
+      font-size: 0.95rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .hero-features li::before {
+      content: '✓';
+      width: 20px;
+      height: 20px;
+      background: var(--green);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-badges {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 2.4rem;
+      flex-wrap: wrap;
+    }
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1.5px solid var(--green);
+      color: var(--green);
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--brown);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 1rem 2.4rem;
+      border-radius: 100px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .hero-cta:hover { background: var(--dark); transform: translateY(-1px); }
+
+    .hero-image-wrap {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 0;
+    }
+    .hero-image-frame {
+      width: min(400px, 45vw);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--parchment);
+      border: 2px solid rgba(200,169,110,0.3);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    /* Placeholder illustration when no image is set */
+    .hero-image-placeholder {
+      text-align: center;
+      color: var(--tan);
+      padding: 2rem;
+    }
+    .hero-image-placeholder svg {
+      width: 80px;
+      margin: 0 auto 1rem;
+      opacity: 0.6;
+    }
+    .hero-image-placeholder p {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    /* If you add a real product image, replace the placeholder div with:
+       <img src="product.jpg" alt="Andrew's Pure Peanut Powder bag" style="width:100%;height:100%;object-fit:cover"> */
+
+    /* ── PRODUCTS ────────────────────────────────────────── */
+    #products {
+      padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 6vw, 6rem);
+      background: var(--white);
+      position: relative;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .section-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--tan);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      color: var(--dark);
+      margin-bottom: 0.75rem;
+    }
+    .section-desc {
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+      font-size: 0.98rem;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .product-card {
+      border: 1.5px solid var(--parchment);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--cream);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .product-card-image {
+      background: var(--parchment);
+      padding: 2.5rem;
+      text-align: center;
+      position: relative;
+    }
+    .product-card-image .product-tag {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--brown);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 100px;
+    }
+    .product-icon {
+      width: 120px;
+      height: 120px;
+      background: var(--cream);
+      border-radius: 50%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      border: 2px solid rgba(200,169,110,0.25);
+    }
+    .product-card-body {
+      padding: 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-name {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      color: var(--dark);
+      margin-bottom: 0.25rem;
+    }
+    .product-weight {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+    .product-desc {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      flex: 1;
+      line-height: 1.6;
+    }
+    .product-price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+    }
+    .product-price {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: var(--brown);
+    }
+    .product-price-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .btn-buy {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--green);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.9rem 1.5rem;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      font-family: var(--sans);
+    }
+    .btn-buy:hover { background: var(--brown); transform: translateY(-1px); }
+
+    /* ── WHY SECTION ─────────────────────────────────────── */
+    #why {
+      padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 6vw, 6rem);
+      background: var(--parchment);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .why-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      text-align: center;
+    }
+    .why-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    .why-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+    .why-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── HOW TO USE ──────────────────────────────────────── */
+    #uses {
+      padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 6vw, 6rem);
+      background: var(--white);
+    }
+    .uses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .use-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .use-number {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--tan);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .use-text strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.25rem;
+    }
+    .use-text span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* ── INGREDIENTS / NUTRITION ──────────────────────────── */
+    #ingredients {
+      padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 6vw, 6rem);
+      background: var(--dark);
+      color: var(--cream);
+      text-align: center;
+    }
+    #ingredients .section-eyebrow { color: var(--tan); }
+    #ingredients .section-title { color: var(--cream); }
+    #ingredients .section-desc { color: rgba(247,242,232,0.65); }
+    .ingredient-highlight {
+      display: inline-block;
+      margin-top: 2.5rem;
+      background: var(--brown);
+      color: var(--cream);
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2.5vw, 2rem);
+      font-style: italic;
+      padding: 1.25rem 3rem;
+      border-radius: 100px;
+    }
+
+    /* ── FAQ ─────────────────────────────────────────────── */
+    #faq {
+      padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 6vw, 6rem);
+      background: var(--cream);
+    }
+    .faq-list {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--parchment);
+    }
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 1.25rem 1.5rem;
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--dark);
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .faq-question::after {
+      content: '+';
+      font-size: 1.3rem;
+      color: var(--tan);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item.open .faq-question::after { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      padding: 0 1.5rem;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 0 1.5rem 1.25rem;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      color: rgba(247,242,232,0.55);
+      text-align: center;
+      padding: 3rem clamp(1.5rem, 6vw, 6rem);
+      font-size: 0.82rem;
+    }
+    footer .footer-logo {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    footer .footer-links a:hover { color: var(--tan); }
+    footer .footer-note {
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      opacity: 0.5;
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 680px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+      }
+      .hero-image-wrap { order: -1; }
+      .hero-image-frame { width: min(260px, 70vw); }
+      .hero-content { padding: 2rem 0 0; }
+      nav .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ───────────────────────────────────────────── -->
+  <nav>
+    <div class="nav-logo">Andrew's <span>Pure</span></div>
+    <ul class="nav-links">
+      <li><a href="#products">Shop</a></li>
+      <li><a href="#uses">How to Use</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">Premium Single Ingredient</div>
+      <h1 class="hero-title">
+        Pure Peanut<br>
+        <em>Powder</em>
+      </h1>
+      <p class="hero-subtitle">100% roasted peanuts. Nothing else.</p>
+
+      <ul class="hero-features">
+        <li>No added sugar or salt</li>
+        <li>No preservatives or additives</li>
+        <li>Vegan &amp; Non-GMO</li>
+        <li>Small-batch quality control</li>
+      </ul>
+
+      <div class="hero-badges">
+        <span class="badge">🌱 Vegan</span>
+        <span class="badge">Non-GMO</span>
+        <span class="badge">6 lb Bulk</span>
+        <span class="badge">Gluten Friendly</span>
+      </div>
+
+      <a href="#products" class="hero-cta">Shop Now</a>
+    </div>
+
+    <div class="hero-image-wrap">
+      <div class="hero-image-frame">
+        <!--
+          REPLACE THIS BLOCK with your product photo:
+          <img src="product.jpg" alt="Andrew's Pure Peanut Powder" style="width:100%;height:100%;object-fit:cover">
+        -->
+        <div class="hero-image-placeholder">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="40" cy="52" rx="28" ry="14" fill="#C8A96E" opacity="0.3"/>
+            <path d="M20 40 Q20 20 40 20 Q60 20 60 40 Q60 55 50 58 Q40 62 30 58 Q20 55 20 40Z" fill="#C8A96E" opacity="0.5"/>
+            <circle cx="40" cy="36" r="8" fill="#7C5A2E" opacity="0.4"/>
+          </svg>
+          <p>Add your product photo here</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRODUCTS ───────────────────────────────────────── -->
+  <section id="products">
+    <div class="section-header">
+      <p class="section-eyebrow">Choose Your Grind</p>
+      <h2 class="section-title">Two Varieties, One Ingredient</h2>
+      <p class="section-desc">Both made from the same 100% pure roasted peanuts — just ground to different textures.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- FINE -->
+      <div class="product-card">
+        <div class="product-card-image">
+          <div class="product-tag">Most Popular</div>
+          <!--
+            Replace with: <img src="fine-powder.jpg" alt="Fine Peanut Powder" style="width:100%;border-radius:8px">
+          -->
+          <div class="product-icon">🥜</div>
+        </div>
+        <div class="product-card-body">
+          <h3 class="product-name">Fine Peanut Powder</h3>
+          <p class="product-weight">Net Wt. 6 lb</p>
+          <p class="product-desc">
+            Ultra-smooth texture — blends instantly into peanut butter with just water, or dissolves seamlessly into smoothies, sauces, baked goods, and more.
+          </p>
+          <div class="product-price-row">
+            <div>
+              <div class="product-price">$26.99</div>
+              <div class="product-price-sub">~$0.28 / oz</div>
+            </div>
+          </div>
+          <!--
+            STRIPE SETUP:
+            1. Create a Payment Link at dashboard.stripe.com → Payment Links → Create
+            2. Add your product, set price to $26.99
+            3. Replace the href below with your link (starts with https://buy.stripe.com/...)
+          -->
+          <a
+            href="https://buy.stripe.com/YOUR_FINE_POWDER_LINK"
+            class="btn-buy"
+            onclick="trackPurchaseClick('Fine Peanut Powder', 26.99)"
+            target="_blank"
+            rel="noopener"
+          >
+            Buy Now — $26.99
+          </a>
+        </div>
+      </div>
+
+      <!-- COARSE -->
+      <div class="product-card">
+        <div class="product-card-image">
+          <!--
+            Replace with: <img src="coarse-powder.jpg" alt="Coarse Peanut Powder" style="width:100%;border-radius:8px">
+          -->
+          <div class="product-icon">🥜</div>
+        </div>
+        <div class="product-card-body">
+          <h3 class="product-name">Coarse Peanut Powder</h3>
+          <p class="product-weight">Net Wt. 6 lb</p>
+          <p class="product-desc">
+            Heartier grind with more texture — ideal for coating proteins, adding crunch to energy bars, blending into oatmeal, or making a chunky-style peanut butter.
+          </p>
+          <div class="product-price-row">
+            <div>
+              <div class="product-price">$26.99</div>
+              <div class="product-price-sub">~$0.28 / oz</div>
+            </div>
+          </div>
+          <!--
+            STRIPE SETUP:
+            Replace the href below with your Coarse Powder Payment Link
+          -->
+          <a
+            href="https://buy.stripe.com/YOUR_COARSE_POWDER_LINK"
+            class="btn-buy"
+            onclick="trackPurchaseClick('Coarse Peanut Powder', 26.99)"
+            target="_blank"
+            rel="noopener"
+          >
+            Buy Now — $26.99
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── WHY US ──────────────────────────────────────────── -->
+  <section id="why">
+    <div class="section-header">
+      <p class="section-eyebrow">Why Andrew's Pure</p>
+      <h2 class="section-title">Clean Label, Full Trust</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🌾</div>
+        <h3 class="why-title">One Ingredient</h3>
+        <p class="why-desc">Roasted peanuts. Read the label — that's it. No fillers, no flow agents, no surprises.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💪</div>
+        <h3 class="why-title">Protein-Rich</h3>
+        <p class="why-desc">A natural source of plant protein and healthy fats. Fuel workouts, meals, and snacks the clean way.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔍</div>
+        <h3 class="why-title">Quality You Can Trust</h3>
+        <p class="why-desc">Every batch is held to strict quality standards. One ingredient, nothing hidden, nothing to hide.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📦</div>
+        <h3 class="why-title">Bulk Value</h3>
+        <p class="why-desc">6 lb bags mean less packaging, fewer orders, and better value per ounce than grocery store alternatives.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW TO USE ─────────────────────────────────────── -->
+  <section id="uses">
+    <div class="section-header">
+      <p class="section-eyebrow">Versatile by Nature</p>
+      <h2 class="section-title">How to Use It</h2>
+      <p class="section-desc">One powder, endless applications. Here are some of our favorites.</p>
+    </div>
+    <div class="uses-grid">
+      <div class="use-item">
+        <span class="use-number">01</span>
+        <div class="use-text">
+          <strong>Peanut Butter</strong>
+          <span>Mix with water until smooth. Add honey or salt to taste. Done in 60 seconds.</span>
+        </div>
+      </div>
+      <div class="use-item">
+        <span class="use-number">02</span>
+        <div class="use-text">
+          <strong>Smoothies &amp; Shakes</strong>
+          <span>Add 2–3 tbsp for a rich peanut flavor without the oily separation.</span>
+        </div>
+      </div>
+      <div class="use-item">
+        <span class="use-number">03</span>
+        <div class="use-text">
+          <strong>Baking</strong>
+          <span>Substitute for flour in cookies, brownies, and protein bars for a nutty depth.</span>
+        </div>
+      </div>
+      <div class="use-item">
+        <span class="use-number">04</span>
+        <div class="use-text">
+          <strong>Sauces &amp; Dressings</strong>
+          <span>Whisk into Thai sauces, satay, noodle dressings, or salad vinaigrettes.</span>
+        </div>
+      </div>
+      <div class="use-item">
+        <span class="use-number">05</span>
+        <div class="use-text">
+          <strong>Oatmeal &amp; Yogurt</strong>
+          <span>Stir into your morning bowl for a boost of flavor and protein.</span>
+        </div>
+      </div>
+      <div class="use-item">
+        <span class="use-number">06</span>
+        <div class="use-text">
+          <strong>Protein Coating</strong>
+          <span>Use the coarse grind to coat chicken, tofu, or shrimp before cooking.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INGREDIENTS ────────────────────────────────────── -->
+  <section id="ingredients">
+    <div class="section-header">
+      <p class="section-eyebrow">The Ingredient List</p>
+      <h2 class="section-title">As Simple as It Gets</h2>
+      <p class="section-desc">No label decoding required. If you can't pronounce it, it's not in here.</p>
+    </div>
+    <div class="ingredient-highlight">
+      Dry Roasted Peanuts.
+    </div>
+    <p style="margin-top:1.5rem;font-size:0.85rem;opacity:0.5;font-style:italic;">
+      Contains peanuts. Processed in a facility that handles tree nuts.
+    </p>
+  </section>
+
+  <!-- ── FAQ ───────────────────────────────────────────── -->
+  <section id="faq">
+    <div class="section-header">
+      <p class="section-eyebrow">Questions</p>
+      <h2 class="section-title">FAQ</h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What's the difference between fine and coarse?
+        </button>
+        <div class="faq-answer">
+          Both are made from the same 100% roasted peanuts. The fine grind is powdery and smooth — it dissolves instantly and makes silky peanut butter or blends invisibly into batters. The coarse grind has more texture and bite — great for coatings, chunky sauces, or when you want a bit of crunch.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do I make peanut butter from this?
+        </button>
+        <div class="faq-answer">
+          Combine 2 tablespoons of fine peanut powder with 1 tablespoon of water and stir. Adjust water for your preferred consistency. For a richer flavor, add a pinch of salt or a touch of honey. That's it — fresh peanut butter in under a minute.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Is this the same as PB2 or other powdered peanut butters?
+        </button>
+        <div class="faq-answer">
+          No — most powdered peanut butter brands (including PB2) add sugar and salt. Andrew's Pure contains one ingredient: dry roasted peanuts. That means more peanut flavor, no hidden sodium, and no added sugar.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How should I store it?
+        </button>
+        <div class="faq-answer">
+          Store in a cool, dry place in an airtight container. Once opened, it stays fresh for up to 12 months. You can also refrigerate it to extend shelf life in humid climates.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you ship outside the US?
+        </button>
+        <div class="faq-answer">
+          Currently we ship within the contiguous United States only. We're working on expanding — check back soon.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What is your return policy?
+        </button>
+        <div class="faq-answer">
+          We stand behind our product. If your order arrives damaged or you're not satisfied, contact us within 14 days of delivery and we'll make it right.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-logo">Andrew's Pure</div>
+    <ul class="footer-links">
+      <li><a href="#products">Shop</a></li>
+      <li><a href="#why">Our Story</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="mailto:hello@andrewspure.com">Contact</a></li>
+    </ul>
+    <p>© 2025 Andrew's Pure. All rights reserved.</p>
+    <p class="footer-note">
+      Crafted with care. Contains peanuts.
+    </p>
+  </footer>
+
+  <!-- ── FAQ ACCORDION JS ──────────────────────────────── -->
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+
+</body>
+</html>
