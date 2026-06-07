@@ -7,15 +7,15 @@
   <meta name="description" content="Premium single-ingredient peanut powder. No sugar, no salt, no preservatives. 100% pure roasted peanuts. Vegan & Non-GMO." />
 
   <!-- ======================================================
-       GA4 — Replace G-T3WRBN5G50 with your Measurement ID
+       GA4 — Replace G-XXXXXXXXXX with your Measurement ID
        Get it free at analytics.google.com
   ====================================================== -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3WRBN5G50"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-T3WRBN5G50');
+    gtag('config', 'G-XXXXXXXXXX');
 
     // Track add-to-cart clicks as conversion events
     function trackPurchaseClick(productName, price) {
@@ -47,7 +47,7 @@
       --white:      #FFFDF7;
       --serif:      'Playfair Display', Georgia, serif;
       --sans:       'Lato', sans-serif;
-      --radius:     30px;
+      --radius:     12px;
       --shadow:     0 4px 24px rgba(58,42,20,0.10);
     }
 
@@ -59,7 +59,7 @@
       background: var(--cream);
       color: var(--text);
       line-height: 1.7;
-      font-size: 30px;
+      font-size: 16px;
     }
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
@@ -92,7 +92,7 @@
     }
     .nav-logo {
       font-family: var(--serif);
-      font-size: 1.15rem;
+      font-size: 1.55rem;
       color: var(--dark);
       letter-spacing: 0.02em;
     }
@@ -234,7 +234,7 @@
       padding: 3rem 0;
     }
     .hero-image-frame {
-      width: min(400px, 45vw);
+      width: min(480px, 48vw);
       aspect-ratio: 1;
       border-radius: 50%;
       background: var(--parchment);
@@ -263,7 +263,8 @@
       font-size: 0.9rem;
       color: var(--muted);
     }
-    /* <img src="Peanut Powder - Fine.png" alt="Andrew's Pure Peanut Powder bag" style="width:100%;height:100%;object-fit:cover"> */
+    /* If you add a real product image, replace the placeholder div with:
+       <img src="product.jpg" alt="Andrew's Pure Peanut Powder bag" style="width:100%;height:100%;object-fit:cover"> */
 
     /* ── PRODUCTS ────────────────────────────────────────── */
     #products {
@@ -645,16 +646,8 @@
       <div class="hero-image-frame">
         <!--
           REPLACE THIS BLOCK with your product photo:
-          <img src="product.jpg" alt="Andrew's Pure Peanut Powder" style="width:100%;height:100%;object-fit:cover">
         -->
-        <div class="hero-image-placeholder">
-          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="40" cy="52" rx="28" ry="14" fill="#C8A96E" opacity="0.3"/>
-            <path d="M20 40 Q20 20 40 20 Q60 20 60 40 Q60 55 50 58 Q40 62 30 58 Q20 55 20 40Z" fill="#C8A96E" opacity="0.5"/>
-            <circle cx="40" cy="36" r="8" fill="#7C5A2E" opacity="0.4"/>
-          </svg>
-          <p>Add your product photo here</p>
-        </div>
+        <img src="hero.png" alt="Andrew's Pure Peanut Powder" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
       </div>
     </div>
   </section>
@@ -673,64 +666,58 @@
       <div class="product-card">
         <div class="product-card-image">
           <div class="product-tag">Most Popular</div>
-          <!--
-            Replace with: <img src="fine-powder.jpg" alt="Fine Peanut Powder" style="width:100%;border-radius:8px">
-          -->
-          <div class="product-icon">🥜</div>
+          <img src="Peanut Powder - Fine.png" alt="Andrew's Pure Fine Peanut Powder" style="width:100%;height:220px;object-fit:cover;border-radius:8px">
         </div>
         <div class="product-card-body">
           <h3 class="product-name">Fine Peanut Powder</h3>
-          <p class="product-weight">Net Wt. 6 lb</p>
+          <p class="product-weight">Min. Order: 1 Case (5 × 6 lb bags)</p>
           <p class="product-desc">
             Ultra-smooth texture — blends instantly into peanut butter with just water, or dissolves seamlessly into smoothies, sauces, baked goods, and more.
           </p>
           <div class="product-price-row">
             <div>
-              <div class="product-price">$26.99</div>
-              <div class="product-price-sub">~$0.28 / oz</div>
+              <div class="product-price">$249.95</div>
+              <div class="product-price-sub">1 case · 5 bags · 30 lbs total</div>
             </div>
           </div>
-          <!--
-            STRIPE SETUP:
-            1. Create a Payment Link at dashboard.stripe.com → Payment Links → Create
-            2. Add your product, set price to $26.99
-            3. Replace the href below with your link (starts with https://buy.stripe.com/...)
-          -->
-          <a target="_blank" href="https://square.link/u/tl7QOwsu"
-   class="btn-buy">
-  Buy Now — $49.99
-</a>
+          <a
+            href="https://square.link/u/tl7QOwsu?src=embed"
+            class="btn-buy"
+            onclick="trackPurchaseClick('Fine Peanut Powder', 249.95)"
+            target="_blank"
+            rel="noopener"
+          >
+            Buy Now — $249.95 / case
+          </a>
         </div>
       </div>
 
       <!-- COARSE -->
       <div class="product-card">
         <div class="product-card-image">
-          <!--
-            Replace with: <img src="coarse-powder.jpg" alt="Coarse Peanut Powder" style="width:100%;border-radius:8px">
-          -->
-          <div class="product-icon">🥜</div>
+          <img src="Peanut Powder - Coarse (Corrected).png" alt="Andrew's Pure Coarse Peanut Powder" style="width:100%;height:220px;object-fit:cover;border-radius:8px">
         </div>
         <div class="product-card-body">
           <h3 class="product-name">Coarse Peanut Powder</h3>
-          <p class="product-weight">Net Wt. 6 lb</p>
+          <p class="product-weight">Min. Order: 1 Case (5 × 6 lb bags)</p>
           <p class="product-desc">
             Heartier grind with more texture — ideal for coating proteins, adding crunch to energy bars, blending into oatmeal, or making a chunky-style peanut butter.
           </p>
           <div class="product-price-row">
             <div>
-              <div class="product-price">$26.99</div>
-              <div class="product-price-sub">~$0.28 / oz</div>
+              <div class="product-price">$169.95</div>
+              <div class="product-price-sub">1 case · 5 bags · 30 lbs total</div>
             </div>
           </div>
-          <!--
-            STRIPE SETUP:
-            Replace the href below with your Coarse Powder Payment Link
-          -->
-          <a target="_blank" href="https://square.link/u/m4hVm9J9"
-   class="btn-buy">
-  Buy Now — $33.99
-</a>
+          <a
+            href="https://square.link/u/m4hVm9J9"
+            class="btn-buy"
+            onclick="trackPurchaseClick('Coarse Peanut Powder', 169.95)"
+            target="_blank"
+            rel="noopener"
+          >
+            Buy Now — $169.95 / case
+          </a>
         </div>
       </div>
 
