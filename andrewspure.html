@@ -723,14 +723,29 @@
     </ul>
   </nav>
 
-  <div style="padding:100px clamp(1.5rem,6vw,6rem) 3rem;background:var(--cream);border-bottom:1px solid var(--parchment);">
-    <p class="section-eyebrow" style="color:var(--green);">Andrew's Pure</p>
-    <h1 style="font-family:var(--serif);font-size:clamp(2.5rem,5vw,4rem);color:var(--dark);font-weight:700;line-height:1.1;margin-bottom:0.75rem;">Pure Peanut Powder.</h1>
-    <p style="color:var(--muted);font-size:0.95rem;max-width:520px;line-height:1.7;">One ingredient. Not defatted. Full natural oils retained for the deep, roasted peanut flavor that serious cooking demands.</p>
-  </div>
+  <!-- HERO WITH CIRCLE IMAGE -->
+  <section style="padding-top:62px;background:var(--cream);min-height:80vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:0;">
+    <div style="padding:clamp(3rem,6vw,5rem) clamp(2rem,5vw,5rem);">
+      <p class="section-eyebrow" style="color:var(--green);">Andrew's Pure</p>
+      <h1 style="font-family:var(--serif);font-size:clamp(2.8rem,5vw,5rem);color:var(--dark);font-weight:700;line-height:1.05;margin-bottom:1rem;">Pure Peanut<br><em>Powder.</em></h1>
+      <p style="color:var(--muted);font-size:1rem;max-width:460px;line-height:1.8;margin-bottom:1.5rem;">One ingredient. Not defatted. Full natural oils retained for the deep, roasted peanut flavor that serious cooking demands.</p>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:2rem;">
+        <li style="font-size:0.9rem;color:var(--muted);display:flex;align-items:center;gap:0.6rem;"><span style="width:18px;height:18px;border-radius:50%;background:var(--green);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">✓</span>One ingredient: dry roasted peanuts</li>
+        <li style="font-size:0.9rem;color:var(--muted);display:flex;align-items:center;gap:0.6rem;"><span style="width:18px;height:18px;border-radius:50%;background:var(--green);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">✓</span>Not defatted — full natural oils retained</li>
+        <li style="font-size:0.9rem;color:var(--muted);display:flex;align-items:center;gap:0.6rem;"><span style="width:18px;height:18px;border-radius:50%;background:var(--green);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">✓</span>Vegan · Non-GMO · No preservatives</li>
+        <li style="font-size:0.9rem;color:var(--muted);display:flex;align-items:center;gap:0.6rem;"><span style="width:18px;height:18px;border-radius:50%;background:var(--green);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">✓</span>Fine and coarse grinds available</li>
+      </ul>
+      <a href="#products" style="display:inline-block;background:var(--green);color:#fff;font-family:var(--sans);font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2rem;border-radius:100px;">Shop Now →</a>
+    </div>
+    <div style="display:flex;justify-content:center;align-items:center;padding:clamp(2rem,5vw,4rem);background:radial-gradient(ellipse 80% 80% at 60% 50%, #D4C4A0 0%, var(--cream) 70%);">
+      <div style="width:min(420px,45vw);aspect-ratio:1;border-radius:50%;background:var(--parchment);border:2px solid rgba(200,169,110,0.3);overflow:hidden;box-shadow:0 4px 24px rgba(58,42,20,0.10);">
+        <img src="hero.png" alt="Andrew's Pure Peanut Powder" style="width:100%;height:100%;object-fit:cover;object-position:center;" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </section>
 
   <!-- PRODUCTS -->
-  <section style="padding:clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,6rem);background:var(--white);">
+  <section id="products" style="padding:clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,6rem);background:var(--white);">
     <div class="section-header">
       <p class="section-eyebrow">Products</p>
       <h2 class="section-title">Choose Your Grind & Size</h2>
@@ -814,13 +829,13 @@
     </div>
   </section>
 
-  <!-- WHAT MAKES IT DIFFERENT -->
+  <!-- WHAT MAKES US DIFFERENT -->
   <section style="padding:clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,6rem);background:var(--parchment);">
     <div class="section-header">
       <p class="section-eyebrow">Andrew's Pure</p>
-      <h2 class="section-title">What makes it different</h2>
+      <h2 style="font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);color:var(--dark);margin-bottom:2rem;">What Makes Us Different</h2>
     </div>
-    <div class="why-grid">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:900px;margin:0 auto;">
       <div class="why-card">
         <div class="why-icon">🥜</div>
         <h3 class="why-title">One Ingredient</h3>

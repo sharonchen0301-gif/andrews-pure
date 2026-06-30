@@ -592,6 +592,7 @@
   <style>
     /* SPLIT HERO */
     .split-hero {
+      position: relative;
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       min-height: calc(100vh - 62px);
@@ -619,7 +620,7 @@
     .split-slash {
       position: absolute;
       font-family: var(--serif);
-      font-size: 4rem;
+      font-size: 7rem;
       font-weight: 300;
       color: var(--tan);
       line-height: 1;
@@ -636,7 +637,7 @@
     .split-half--ap  .split-eyebrow { color: var(--green); }
     .split-title {
       font-family: var(--serif);
-      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      font-size: clamp(2.8rem, 5vw, 5rem);
       font-weight: 700;
       line-height: 1.05;
       margin-bottom: 1rem;
@@ -705,7 +706,8 @@
     .split-half--ap  .split-product-img { left: -5%; top: 50%; transform: translateY(-50%); }
 
     @media (max-width: 720px) {
-      .split-hero { grid-template-columns: 1fr; }
+      .split-hero {
+      position: relative; grid-template-columns: 1fr; }
       .split-divider { display: none; }
       .split-half { min-height: 60vh; }
       .split-product-img { display: none; }
@@ -726,8 +728,20 @@
   <!-- SPLIT HERO -->
   <div class="split-hero">
 
+    <!-- BRAND NAMES HEADER BAR -->
+    <div style="position:absolute;top:0;left:0;right:0;z-index:20;display:grid;grid-template-columns:1fr auto 1fr;height:80px;pointer-events:none;">
+      <div style="display:flex;align-items:center;padding:0 clamp(2rem,5vw,5rem);background:rgba(26,6,5,0.9);">
+        <span style="font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:700;color:#F5EDE8;letter-spacing:0.02em;">Any Time Bowls</span>
+      </div>
+      <div style="width:1px;background:var(--tan);display:flex;align-items:center;justify-content:center;">
+        <span style="font-family:var(--serif);font-size:2.5rem;color:var(--tan);background:#1A0605;padding:0 0.5rem;line-height:1;">/</span>
+      </div>
+      <div style="display:flex;align-items:center;padding:0 clamp(2rem,5vw,5rem);background:rgba(247,242,232,0.95);">
+        <span style="font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:700;color:var(--dark);letter-spacing:0.02em;">Andrew's Pure</span>
+      </div>
+    </div>
     <!-- ANY TIME BOWLS -->
-    <div class="split-half split-half--atb">
+    <div class="split-half split-half--atb" style="padding-top:calc(clamp(3rem,7vw,6rem) + 80px);">
       <img src="Chili_Crunch_Image.png" alt="" class="split-product-img">
       <div class="split-eyebrow">Any Time Bowls</div>
       <h2 class="split-title">Bold.<br>Chinese-Inspired.<br>Unapologetic.</h2>
@@ -767,10 +781,10 @@
   <section id="why" style="padding: clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,6rem); background: var(--parchment);">
     <div class="section-header">
       <p class="section-eyebrow">Why AJSL Foods</p>
-      <h2 class="section-title">What both brands share</h2>
+      <h2 style="font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);color:var(--dark);margin-bottom:0.75rem;">Our promise to you.</h2>
       <p class="section-desc">Two different products, one set of non-negotiables.</p>
     </div>
-    <div class="why-grid">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:900px;margin:0 auto;">
       <div class="why-card">
         <div class="why-icon">🌱</div>
         <h3 class="why-title">Vegan & Non-GMO</h3>
@@ -798,7 +812,7 @@
   <section id="story" style="padding: clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,6rem); background: var(--white);">
     <div class="section-header">
       <p class="section-eyebrow">Our Story</p>
-      <h2 class="section-title">Flavor without shortcuts.</h2>
+      <h2 style="font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);color:var(--dark);margin-bottom:2rem;">Flavor without shortcuts.</h2>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1000px;margin:0 auto;align-items:start;">
       <div>
@@ -818,7 +832,7 @@
     <p style="color:rgba(247,242,232,0.7);font-size:0.95rem;max-width:500px;margin:0 auto 2rem;line-height:1.7;">Available direct or through Faire. New Faire retailers get up to $150 off and 1 year of free shipping with AJSL Foods.</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
       <a href="wholesale.html" style="display:inline-block;background:var(--tan);color:var(--dark);font-family:var(--sans);font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2rem;border-radius:100px;">Wholesale Info</a>
-      <a href="https://www.ajslfoods.faire.com" target="_blank" rel="noopener" style="display:inline-block;border:1.5px solid rgba(200,169,110,0.5);color:var(--tan);font-family:var(--sans);font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2rem;border-radius:100px;">Shop on Faire</a>
+      <a href="https://www.faire.com/direct/ajslfoods?signUp=direct" target="_blank" rel="noopener" style="display:inline-block;border:1.5px solid rgba(200,169,110,0.5);color:var(--tan);font-family:var(--sans);font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2rem;border-radius:100px;">Shop on Faire</a>
     </div>
   </section>
 
