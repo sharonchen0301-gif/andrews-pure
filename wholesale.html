@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AJSL Foods — Any Time Bowls & Andrew's Pure</title>
-  <meta name="description" content="AJSL Foods is home to Any Time Bowls bold Chinese-inspired crunch oils and Andrew's Pure single-ingredient peanut powder." />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wholesale — AJSL Foods</title>
+  <meta name="description" content="Wholesale ordering for AJSL Foods. Shop on Faire or order direct. Request a free sample."/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3WRBN5G50"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-T3WRBN5G50');
-    function trackPurchaseClick(productName, price) {
-      gtag('event', 'begin_checkout', {
-        currency: 'USD', value: price,
-        items: [{ item_name: productName, price: price, quantity: 1 }]
-      });
-    }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -589,128 +583,6 @@
       nav .nav-links { display: none; }
     }
   </style>
-  <style>
-    /* SPLIT HERO */
-    .split-hero {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      min-height: calc(100vh - 62px);
-      margin-top: 62px;
-    }
-    .split-half {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: clamp(3rem, 7vw, 6rem) clamp(2rem, 5vw, 5rem);
-      position: relative;
-      overflow: hidden;
-    }
-    .split-half--atb { background: #1A0605; }
-    .split-half--ap  { background: var(--cream); }
-    .split-divider {
-      width: 1px;
-      background: linear-gradient(to bottom, transparent, #C8A96E 20%, #C8A96E 80%, transparent);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-    }
-    .split-slash {
-      position: absolute;
-      font-family: var(--serif);
-      font-size: 4rem;
-      font-weight: 300;
-      color: var(--tan);
-      line-height: 1;
-      user-select: none;
-    }
-    .split-eyebrow {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
-    }
-    .split-half--atb .split-eyebrow { color: #E87060; }
-    .split-half--ap  .split-eyebrow { color: var(--green); }
-    .split-title {
-      font-family: var(--serif);
-      font-size: clamp(2.2rem, 4vw, 3.8rem);
-      font-weight: 700;
-      line-height: 1.05;
-      margin-bottom: 1rem;
-    }
-    .split-half--atb .split-title { color: #F5EDE8; }
-    .split-half--ap  .split-title { color: var(--dark); }
-    .split-tagline {
-      font-size: 0.92rem;
-      line-height: 1.7;
-      margin-bottom: 2rem;
-    }
-    .split-half--atb .split-tagline { color: rgba(245,237,232,0.65); }
-    .split-half--ap  .split-tagline { color: var(--muted); }
-    .split-features {
-      list-style: none;
-      margin-bottom: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .split-features li {
-      font-size: 0.88rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-    .split-half--atb .split-features li { color: rgba(245,237,232,0.75); }
-    .split-half--ap  .split-features li { color: var(--muted); }
-    .split-features li::before {
-      content: '✓';
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      font-size: 0.65rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .split-half--atb .split-features li::before { background: #C8392B; color: #fff; }
-    .split-half--ap  .split-features li::before { background: var(--green); color: #fff; }
-    .split-btn {
-      display: inline-block;
-      font-family: var(--sans);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.85rem 2rem;
-      border-radius: 100px;
-      transition: opacity 0.2s, transform 0.15s;
-      width: fit-content;
-    }
-    .split-btn:hover { opacity: 0.85; transform: translateY(-1px); }
-    .split-half--atb .split-btn { background: #C8392B; color: #fff; }
-    .split-half--ap  .split-btn { background: var(--brown); color: #fff; }
-
-    .split-product-img {
-      position: absolute;
-      opacity: 0.08;
-      width: 55%;
-      max-width: 280px;
-      pointer-events: none;
-    }
-    .split-half--atb .split-product-img { right: -5%; top: 50%; transform: translateY(-50%); }
-    .split-half--ap  .split-product-img { left: -5%; top: 50%; transform: translateY(-50%); }
-
-    @media (max-width: 720px) {
-      .split-hero { grid-template-columns: 1fr; }
-      .split-divider { display: none; }
-      .split-half { min-height: 60vh; }
-      .split-product-img { display: none; }
-    }
-  </style>
 </head>
 <body>
   <nav>
@@ -723,102 +595,55 @@
     </ul>
   </nav>
 
-  <!-- SPLIT HERO -->
-  <div class="split-hero">
-
-    <!-- ANY TIME BOWLS -->
-    <div class="split-half split-half--atb">
-      <img src="Chili_Crunch_Image.png" alt="" class="split-product-img">
-      <div class="split-eyebrow">Any Time Bowls</div>
-      <h2 class="split-title">Bold.<br>Chinese-Inspired.<br>Unapologetic.</h2>
-      <p class="split-tagline">Handcrafted crunch oils that bring the heat — Chili Crunch and Szechuan Pepper Crunch, built for cooks who don't compromise.</p>
-      <ul class="split-features">
-        <li>Vegan · Non-GMO · MSG Free</li>
-        <li>No preservatives or additives</li>
-        <li>Wholesale cases of 45 × 6 oz jars</li>
-        <li>Available on Faire</li>
-      </ul>
-      <a href="anytimebowls.html" class="split-btn">Shop Crunch Oils →</a>
-    </div>
-
-    <!-- SLASH DIVIDER -->
-    <div class="split-divider">
-      <span class="split-slash">/</span>
-    </div>
-
-    <!-- ANDREW'S PURE -->
-    <div class="split-half split-half--ap">
-      <img src="hero.png" alt="" class="split-product-img" onerror="this.style.display='none'">
-      <div class="split-eyebrow">Andrew's Pure</div>
-      <h2 class="split-title">Pure.<br>Undefatted.<br>Nothing hidden.</h2>
-      <p class="split-tagline">Single-ingredient peanut powder with full natural oils retained — the deep, roasted flavor that defatted powders can't deliver.</p>
-      <ul class="split-features">
-        <li>One ingredient: dry roasted peanuts</li>
-        <li>Not defatted — full natural oils retained</li>
-        <li>Fine and coarse grinds available</li>
-        <li>Single bags and wholesale cases</li>
-      </ul>
-      <a href="andrewspure.html" class="split-btn">Shop Peanut Powder →</a>
-    </div>
-
+  <div style="padding:100px clamp(1.5rem,6vw,6rem) 3rem;background:var(--parchment);border-bottom:1px solid var(--parchment);">
+    <p class="section-eyebrow">Trade & Wholesale</p>
+    <h1 style="font-family:var(--serif);font-size:clamp(2.5rem,5vw,4rem);color:var(--dark);font-weight:400;line-height:1.1;margin-bottom:0.75rem;">Let's work together.</h1>
+    <p style="color:var(--muted);font-size:0.95rem;max-width:520px;line-height:1.7;">We sell direct and through Faire. Not ready to commit to a case? Request a free sample first — no commitment required.</p>
   </div>
 
-  <!-- WHY AJSL FOODS -->
-  <section id="why" style="padding: clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,6rem); background: var(--parchment);">
-    <div class="section-header">
-      <p class="section-eyebrow">Why AJSL Foods</p>
-      <h2 class="section-title">What both brands share</h2>
-      <p class="section-desc">Two different products, one set of non-negotiables.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">🌱</div>
-        <h3 class="why-title">Vegan & Non-GMO</h3>
-        <p class="why-desc">Every product across both brands is vegan and Non-GMO. Clean ingredients, full stop.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🚫</div>
-        <h3 class="why-title">No MSG, No Preservatives</h3>
-        <p class="why-desc">Nothing artificial, nothing to hide. What you see on the label is exactly what's in the jar or bag.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🔍</div>
-        <h3 class="why-title">Honest Labels</h3>
-        <p class="why-desc">Short ingredient lists you can actually read. No fillers, no additives, no surprises.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">📦</div>
-        <h3 class="why-title">Wholesale Ready</h3>
-        <p class="why-desc">Both brands are available in wholesale cases for retailers. Also available on Faire with net 60 terms.</p>
+  <section style="padding:clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,6rem);background:var(--white);">
+    <div style="max-width:800px;margin:0 auto;">
+      <p class="section-eyebrow">Faire Marketplace</p>
+      <h2 class="section-title" style="margin-bottom:2rem;">New to Faire? Here's your offer.</h2>
+      <div style="background:var(--parchment);border-radius:12px;padding:2.5rem;margin-bottom:2rem;">
+        <ul class="hero-features" style="margin-bottom:1.5rem;">
+          <li>Up to <strong>$150 off</strong> your first order</li>
+          <li><strong>1 year of free shipping</strong> with AJSL Foods</li>
+          <li>Net 60 terms available on Faire</li>
+          <li>Easy reordering and inventory management</li>
+        </ul>
+        <p style="font-size:0.78rem;color:var(--muted);font-style:italic;margin-bottom:1.5rem;">*New retailer offer applies to retailers new to Faire only. Max discount $150. Free shipping with AJSL Foods only. Expires 7 days after signup.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="https://www.ajslfoods.faire.com" target="_blank" rel="noopener" class="hero-cta">Shop on Faire →</a>
+          <a href="andrewspure.html" style="display:inline-block;border:1.5px solid var(--brown);color:var(--brown);font-family:var(--sans);font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2rem;border-radius:100px;">View All Products</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- STORY -->
-  <section id="story" style="padding: clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,6rem); background: var(--white);">
-    <div class="section-header">
-      <p class="section-eyebrow">Our Story</p>
-      <h2 class="section-title">Flavor without shortcuts.</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1000px;margin:0 auto;align-items:start;">
-      <div>
-        <p style="font-size:1rem;line-height:1.9;color:#5A4A34;margin-bottom:1.5rem;">Andrew grew up in China and spent years traveling across the United States, carrying the cuisines of his childhood with him — Chinese, Southeast Asian, the kind of cooking where a sauce can make or break a dish.</p>
-        <p style="font-size:1rem;line-height:1.9;color:#5A4A34;">While perfecting his own personal sauces and seasonings — flavors he eventually wanted to bring to the world — several recipes required deep peanut flavor. But every powder on the market had been defatted, stripping out precisely the richness that makes peanuts worth cooking with.</p>
-      </div>
-      <div>
-        <blockquote style="font-family:var(--serif);font-size:1.25rem;font-style:italic;color:var(--brown);border-left:3px solid var(--tan);padding-left:1.5rem;margin-bottom:1.5rem;line-height:1.6;">"The ones on the market tasted like they'd had the soul taken out. Because they had."</blockquote>
-        <p style="font-size:1rem;line-height:1.9;color:#5A4A34;">So Andrew found his own method — one that preserved the oils, locked in the roasted aroma, and produced a powder that actually tasted like peanuts. That became <strong>Andrew's Pure</strong>. And from the same kitchen, with the same obsession for honest ingredients, came <strong>Any Time Bowls</strong> — bold crunch oils rooted in the Chinese culinary tradition he grew up with.</p>
-      </div>
+  <section style="padding:clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,6rem);background:var(--cream);" id="sample">
+    <div style="max-width:800px;margin:0 auto;">
+      <p class="section-eyebrow">Free Sample Program</p>
+      <h2 class="section-title" style="margin-bottom:1rem;">Not ready to commit to a case?</h2>
+      <p style="color:var(--muted);font-size:0.95rem;line-height:1.7;max-width:500px;margin-bottom:2rem;">Request a free sample of any product and taste the difference before you order. Fill out the form and we'll be in touch within 2–3 business days.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfksdET5kFeVvGpqs7otsJ30gtY4OBi6c4jijN-P6_IZ37FYQ/viewform?usp=header"
+         target="_blank" rel="noopener"
+         onclick="gtag('event','sample_request_click',{event_category:'engagement'});"
+         class="hero-cta">Request a Free Sample →</a>
     </div>
   </section>
 
-  <!-- WHOLESALE CTA -->
-  <section style="padding: clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,6rem); background: var(--dark); color: var(--cream); text-align:center;">
-    <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);margin-bottom:1rem;color:var(--cream);">Ready to carry AJSL Foods?</h2>
-    <p style="color:rgba(247,242,232,0.7);font-size:0.95rem;max-width:500px;margin:0 auto 2rem;line-height:1.7;">Available direct or through Faire. New Faire retailers get up to $150 off and 1 year of free shipping with AJSL Foods.</p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="wholesale.html" style="display:inline-block;background:var(--tan);color:var(--dark);font-family:var(--sans);font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2rem;border-radius:100px;">Wholesale Info</a>
-      <a href="https://www.ajslfoods.faire.com" target="_blank" rel="noopener" style="display:inline-block;border:1.5px solid rgba(200,169,110,0.5);color:var(--tan);font-family:var(--sans);font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2rem;border-radius:100px;">Shop on Faire</a>
+  <section id="faq" style="padding:clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,6rem);background:var(--parchment);">
+    <div style="max-width:700px;margin:0 auto;">
+      <p class="section-eyebrow">Questions</p>
+      <h2 class="section-title" style="margin-bottom:2rem;">FAQ</h2>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What are the minimum order quantities?</button><div class="faq-answer">Any Time Bowls (Chili Crunch & Szechuan Pepper Crunch): 45 jars per case. Andrew's Pure 6 lb bags: available as single units or cases of 5. Andrew's Pure 10 oz fine jars: case of 18. Andrew's Pure 12 oz coarse jars: case of 18.</div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">How long does shipping take?</button><div class="faq-answer">USPS Ground Advantage typically delivers in 2–5 business days within the Northeast and Midwest. Mountain West and Pacific Coast may take 5–8 business days. We ship to the contiguous United States only.</div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Do you offer Net 30 or Net 60 terms?</button><div class="faq-answer">Net 60 terms are available through Faire for qualified retailers. For direct orders, payment is required at time of order via Square. Contact us to discuss terms for large or recurring orders.</div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What allergens are in your products?</button><div class="faq-answer">Andrew's Pure contains peanuts. Any Time Bowls products contain soy and sesame. See individual product pages for full ingredient lists.</div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Can I return or exchange an order?</button><div class="faq-answer">If your order arrives damaged or there's a quality issue, contact us within 14 days of delivery at ajslfoods@gmail.com and we'll make it right.</div></div>
+      </div>
     </div>
   </section>
 
