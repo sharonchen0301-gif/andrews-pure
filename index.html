@@ -601,13 +601,13 @@
     .split-half {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       padding: clamp(3rem, 7vw, 6rem) clamp(2rem, 5vw, 5rem);
       position: relative;
       overflow: hidden;
     }
-    .split-half--atb { background: #1A0605; }
-    .split-half--ap  { background: var(--cream); }
+    .split-half--atb { background: #8B0000; background: linear-gradient(135deg, #8B1A10 0%, #C8392B 100%); }
+    .split-half--ap  { background: #EEF4EC; }
     .split-divider {
       width: 1px;
       background: linear-gradient(to bottom, transparent, #C8A96E 20%, #C8A96E 80%, transparent);
@@ -633,8 +633,8 @@
       text-transform: uppercase;
       margin-bottom: 1.25rem;
     }
-    .split-half--atb .split-eyebrow { color: #E87060; }
-    .split-half--ap  .split-eyebrow { color: var(--green); }
+    .split-half--atb .split-eyebrow { color: rgba(255,220,210,0.85); }
+    .split-half--ap  .split-eyebrow { color: var(--green); font-weight:700; }
     .split-title {
       font-family: var(--serif);
       font-size: clamp(2.8rem, 5vw, 5rem);
@@ -677,7 +677,7 @@
       justify-content: center;
       flex-shrink: 0;
     }
-    .split-half--atb .split-features li::before { background: #C8392B; color: #fff; }
+    .split-half--atb .split-features li::before { background: rgba(255,255,255,0.25); color: #fff; }
     .split-half--ap  .split-features li::before { background: var(--green); color: #fff; }
     .split-btn {
       display: inline-block;
@@ -730,19 +730,18 @@
 
     <!-- BRAND NAMES HEADER BAR -->
     <div style="position:absolute;top:0;left:0;right:0;z-index:20;display:grid;grid-template-columns:1fr auto 1fr;height:80px;pointer-events:none;">
-      <div style="display:flex;align-items:center;padding:0 clamp(2rem,5vw,5rem);background:rgba(26,6,5,0.9);">
+      <div style="display:flex;align-items:center;padding:0 clamp(2rem,5vw,5rem);">
         <span style="font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:700;color:#F5EDE8;letter-spacing:0.02em;">Any Time Bowls</span>
       </div>
-      <div style="width:1px;background:var(--tan);display:flex;align-items:center;justify-content:center;">
-        <span style="font-family:var(--serif);font-size:2.5rem;color:var(--tan);background:#1A0605;padding:0 0.5rem;line-height:1;">/</span>
+      <div style="display:flex;align-items:center;justify-content:center;padding:0 1.5rem;">
+        <span style="font-family:var(--serif);font-size:4rem;font-weight:300;color:rgba(200,169,110,0.7);line-height:1;">/</span>
       </div>
-      <div style="display:flex;align-items:center;padding:0 clamp(2rem,5vw,5rem);background:rgba(247,242,232,0.95);">
+      <div style="display:flex;align-items:center;padding:0 clamp(2rem,5vw,5rem);">
         <span style="font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:700;color:var(--dark);letter-spacing:0.02em;">Andrew's Pure</span>
       </div>
     </div>
     <!-- ANY TIME BOWLS -->
     <div class="split-half split-half--atb" style="padding-top:calc(clamp(3rem,7vw,6rem) + 80px);">
-      <img src="Chili_Crunch_Image.png" alt="" class="split-product-img">
       <div class="split-eyebrow">Any Time Bowls</div>
       <h2 class="split-title">Bold.<br>Chinese-Inspired.<br>Unapologetic.</h2>
       <p class="split-tagline">Handcrafted crunch oils that bring the heat — Chili Crunch and Szechuan Pepper Crunch, built for cooks who don't compromise.</p>
@@ -756,13 +755,10 @@
     </div>
 
     <!-- SLASH DIVIDER -->
-    <div class="split-divider">
-      <span class="split-slash">/</span>
-    </div>
+    <div class="split-divider"></div>
 
     <!-- ANDREW'S PURE -->
-    <div class="split-half split-half--ap">
-      <img src="hero.png" alt="" class="split-product-img" onerror="this.style.display='none'">
+    <div class="split-half split-half--ap" style="padding-top:calc(clamp(3rem,7vw,6rem) + 80px);">
       <div class="split-eyebrow">Andrew's Pure</div>
       <h2 class="split-title">Pure.<br>Undefatted.<br>Nothing hidden.</h2>
       <p class="split-tagline">Single-ingredient peanut powder with full natural oils retained — the deep, roasted flavor that defatted powders can't deliver.</p>
