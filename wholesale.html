@@ -583,6 +583,14 @@
       nav .nav-links { display: none; }
     }
   </style>
+
+  <style>
+    @media (max-width: 640px) {
+      nav .nav-links { display: none; }
+      .faq-list { padding: 0; }
+      [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+    }
+  </style>
 </head>
 <body>
   <nav>
