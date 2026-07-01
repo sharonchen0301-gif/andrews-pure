@@ -732,11 +732,30 @@
     </ul>
   </nav>
 
-  <div style="padding:100px clamp(1.5rem,6vw,6rem) 3rem;background:#1A0605;border-bottom:1px solid #2A1008;">
-    <p class="section-eyebrow" style="color:#E87060;">Any Time Bowls</p>
-    <h1 style="font-family:var(--serif);font-size:clamp(2.5rem,5vw,4rem);color:#F5EDE8;font-weight:700;line-height:1.1;margin-bottom:0.75rem;">Bold Chinese-Inspired Crunch.</h1>
-    <p style="color:rgba(245,237,232,0.65);font-size:0.95rem;max-width:520px;line-height:1.7;">Handcrafted crunch oils built for cooks who don't compromise. Vegan, Non-GMO, MSG Free — nothing artificial, nothing hidden.</p>
-  </div>
+  <!-- HERO - FULL WIDTH WITH FADE (matching Andrew's Pure style) -->
+  <section style="padding-top:62px;position:relative;min-height:80vh;display:flex;align-items:center;overflow:hidden;background:#FDF5F4;">
+    <!-- Background jar image with left-side fade -->
+    <div style="position:absolute;inset:0;z-index:0;">
+      <img src="Chili_Crunch_Image.png" alt="" style="position:absolute;right:0;top:50%;transform:translateY(-50%);height:90%;width:auto;max-width:55%;object-fit:contain;filter:drop-shadow(0 20px 60px rgba(0,0,0,0.15));" onerror="this.style.display='none'">
+      <div style="position:absolute;inset:0;background:linear-gradient(to right, #FDF5F4 40%, rgba(253,245,244,0.92) 58%, rgba(253,245,244,0.4) 75%, transparent 100%);"></div>
+    </div>
+    <!-- Text content -->
+    <div style="position:relative;z-index:1;padding:clamp(3rem,6vw,5rem) clamp(2rem,5vw,5rem);max-width:600px;">
+      <p style="font-family:var(--sans);font-size:0.65rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#C8392B;margin-bottom:0.75rem;">AJSL Foods</p>
+      <h1 style="font-family:var(--serif);line-height:1;margin-bottom:1.25rem;">
+        <span style="display:block;font-size:clamp(4rem,8vw,7.5rem);font-weight:700;color:#1A0605;letter-spacing:-0.02em;line-height:0.92;">Any Time<br>Bowls</span>
+        <span style="display:block;font-size:clamp(1rem,2vw,1.4rem);font-weight:400;color:#8B2219;font-style:italic;margin-top:0.6rem;">Bold Chinese-Inspired Crunch.</span>
+      </h1>
+      <p style="color:#5A3020;font-size:0.95rem;max-width:420px;line-height:1.8;margin-bottom:1.75rem;">Handcrafted crunch oils that bring the heat — Vegan, Non-GMO, MSG Free. Nothing artificial, nothing hidden.</p>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:2rem;">
+        <li style="font-size:0.9rem;color:#5A3020;display:flex;align-items:center;gap:0.6rem;"><span style="width:18px;height:18px;border-radius:50%;background:#C8392B;color:#fff;font-size:0.6rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">✓</span>Vegan · Non-GMO · MSG Free</li>
+        <li style="font-size:0.9rem;color:#5A3020;display:flex;align-items:center;gap:0.6rem;"><span style="width:18px;height:18px;border-radius:50%;background:#C8392B;color:#fff;font-size:0.6rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">✓</span>No preservatives or additives</li>
+        <li style="font-size:0.9rem;color:#5A3020;display:flex;align-items:center;gap:0.6rem;"><span style="width:18px;height:18px;border-radius:50%;background:#C8392B;color:#fff;font-size:0.6rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">✓</span>Wholesale cases of 45 × 7 oz jars</li>
+        <li style="font-size:0.9rem;color:#5A3020;display:flex;align-items:center;gap:0.6rem;"><span style="width:18px;height:18px;border-radius:50%;background:#C8392B;color:#fff;font-size:0.6rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">✓</span>Available on Faire</li>
+      </ul>
+      <a href="#products" style="display:inline-block;background:#C8392B;color:#fff;font-family:var(--sans);font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2rem;border-radius:100px;">Shop Now →</a>
+    </div>
+  </section>
 
   <!-- PRODUCTS -->
   <section style="padding:clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,6rem);background:var(--white);">
@@ -749,7 +768,7 @@
 
       <div class="product-card">
         <div class="product-card-image" style="background:#FDF5F4;">
-          <img src="Chili_Crunch_Image.png" alt="Any Time Bowls Chili Crunch" style="width:100%;height:220px;object-fit:contain;border-radius:8px;">
+          <img src="Chili_Crunch_Image.png" alt="Any Time Bowls Chili Crunch" style="width:100%;height:260px;object-fit:contain;border-radius:8px;background:#fff;padding:1rem;">
         </div>
         <div class="product-card-body">
           <h3 class="product-name">Chili Crunch</h3>
@@ -767,7 +786,7 @@
 
       <div class="product-card">
         <div class="product-card-image" style="background:#FDF5F4;">
-          <img src="Szechuan_Pepper_Crunch_Image.png" alt="Any Time Bowls Szechuan Pepper Crunch" style="width:100%;height:220px;object-fit:contain;border-radius:8px;">
+          <img src="Szechuan_Pepper_Crunch_Image.png" alt="Any Time Bowls Szechuan Pepper Crunch" style="width:100%;height:260px;object-fit:contain;border-radius:8px;background:#fff;padding:1rem;">
         </div>
         <div class="product-card-body">
           <h3 class="product-name">Szechuan Pepper Crunch</h3>
@@ -802,6 +821,7 @@
         <img src="Szechuan_Promo_4.png" alt="Dare to Try It" style="width:100%;height:100%;object-fit:contain;display:block;" onerror="this.style.display='none'">
       </div>
     </div>
+    <p style="text-align:center;font-size:0.75rem;color:rgba(245,237,232,0.4);margin-top:1.25rem;font-style:italic;">Save the 4-panel marketing image cropped into 4 files: Szechuan_Promo_1.png through Szechuan_Promo_4.png</p>
   </section>
 
   <!-- WHAT MAKES US DIFFERENT -->
@@ -838,15 +858,15 @@
     <div class="section-header">
       <p style="font-family:var(--sans);font-size:0.85rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--dark);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.6rem;">USE IT ON EVERYTHING</p>
       <h2 style="font-family:var(--serif);font-size:clamp(3rem,6vw,5.5rem);font-weight:700;color:var(--dark);margin-bottom:2rem;line-height:1;">Suggested Uses</h2>
-      <p class="section-desc">There are no rules! Here are a few starting points.</p>
+      <p class="section-desc">There are no rules. Here are a few starting points.</p>
     </div>
     <div class="uses-grid">
       <div class="use-item"><span class="use-number">01</span><div class="use-text"><strong>Noodles & Ramen</strong><span>Toss in a spoonful at the finish for instant depth and heat.</span></div></div>
       <div class="use-item"><span class="use-number">02</span><div class="use-text"><strong>Dumplings & Dipping</strong><span>Mix with soy sauce or vinegar for a punchy dipping sauce.</span></div></div>
-      <div class="use-item"><span class="use-number">03</span><div class="use-text"><strong>Eggs & Avocado Toast</strong><span>A drizzle transforms any breakfast, every single time.</span></div></div>
+      <div class="use-item"><span class="use-number">03</span><div class="use-text"><strong>Eggs & Avocado Toast</strong><span>A drizzle transforms breakfast. Every single time.</span></div></div>
       <div class="use-item"><span class="use-number">04</span><div class="use-text"><strong>Stir-Fries</strong><span>Add at the end of cooking to preserve the crunch and aroma.</span></div></div>
       <div class="use-item"><span class="use-number">05</span><div class="use-text"><strong>Salads & Cold Dishes</strong><span>Sprinkle for a burst of flavor, texture, and heat.</span></div></div>
-      <div class="use-item"><span class="use-number">06</span><div class="use-text"><strong>Ice Cream</strong><span>Sweet meets electric heat. Dare to try it!</span></div></div>
+      <div class="use-item"><span class="use-number">06</span><div class="use-text"><strong>Ice Cream</strong><span>Sweet meets electric heat. Dare to try it.</span></div></div>
     </div>
   </section>
 
