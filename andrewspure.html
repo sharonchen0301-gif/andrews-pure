@@ -723,18 +723,16 @@
       nav .nav-links { display: none; }
       section[style*="min-height:80vh"] { min-height: 60vh !important; }
     }
-  
-    /* CAROUSEL */
     .carousel { position:relative; overflow:hidden; background:#fff; }
-    .carousel-track { display:flex; transition:transform 0.35s ease; }
-    .carousel-track img { min-width:100%; height:260px; object-fit:contain; padding:0.75rem; flex-shrink:0; }
-    .carousel-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(58,42,20,0.55); color:#fff; border:none; width:32px; height:32px; border-radius:50%; font-size:1rem; cursor:pointer; z-index:5; display:flex; align-items:center; justify-content:center; }
-    .carousel-btn.prev { left:6px; }
-    .carousel-btn.next { right:6px; }
-    .carousel-dots { display:flex; justify-content:center; gap:5px; padding:6px 0; background:#fff; }
-    .carousel-dots span { width:6px; height:6px; border-radius:50%; background:var(--border,#E0D8CC); cursor:pointer; transition:background 0.2s; }
-    .carousel-dots span.active { background:var(--brown,#7C5A2E); }
-</style>
+.carousel-track { display:flex; transition:transform 0.35s ease; }
+.carousel-track img { min-width:100%; height:260px; object-fit:contain; padding:0.75rem; flex-shrink:0; }
+.carousel-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(58,42,20,0.55); color:#fff; border:none; width:32px; height:32px; border-radius:50%; font-size:1rem; cursor:pointer; z-index:5; display:flex; align-items:center; justify-content:center; }
+.carousel-btn.prev { left:6px; }
+.carousel-btn.next { right:6px; }
+.carousel-dots { display:flex; justify-content:center; gap:5px; padding:6px 0; background:#fff; }
+.carousel-dots span { width:6px; height:6px; border-radius:50%; background:var(--border,#E0D8CC); cursor:pointer; transition:background 0.2s; }
+.carousel-dots span.active { background:var(--brown,#7C5A2E); }
+  </style>
 </head>
 <body>
   <nav>
@@ -787,8 +785,6 @@
   <div class="carousel-track">
     <img src="Peanut Powder - Fine.png" alt="Fine Peanut Powder 6lb">
     <img src="Peanut_Powder_Fine_Label.png" alt="Fine Powder Label">
-    <img src="Peanut_Powder_Instructions.png" alt="Instructions">
-    <img src="Peanut_Powder_Nutrition.png" alt="Nutrition Facts">
   </div>
   <button class="carousel-btn prev" onclick="moveCarousel('c-fine6',-1)">&#8249;</button>
   <button class="carousel-btn next" onclick="moveCarousel('c-fine6',1)">&#8250;</button>
@@ -817,8 +813,6 @@
   <div class="carousel-track">
     <img src="Peanut Powder - Coarse (Corrected).png" alt="Coarse Peanut Powder 6lb">
     <img src="Peanut_Powder_Coarse_Label.png" alt="Coarse Powder Label">
-    <img src="Peanut_Powder_Instructions.png" alt="Instructions">
-    <img src="Peanut_Powder_Nutrition.png" alt="Nutrition Facts">
   </div>
   <button class="carousel-btn prev" onclick="moveCarousel('c-coarse6',-1)">&#8249;</button>
   <button class="carousel-btn next" onclick="moveCarousel('c-coarse6',1)">&#8250;</button>
@@ -869,7 +863,8 @@
 
       <div class="product-card">
         <div class="product-card-image">
-<div class="carousel" id="c-coarse12">
+        </div>
+        <div class="carousel" id="c-coarse12">
   <div class="carousel-track">
     <img src="Jar_-_Coarse.png" alt="Coarse Peanut Powder 12oz">
     <img src="Peanut_Powder_Instructions.png" alt="Instructions">
@@ -879,7 +874,6 @@
   <button class="carousel-btn next" onclick="moveCarousel('c-coarse12',1)">&#8250;</button>
   <div class="carousel-dots" id="c-coarse12-dots"></div>
 </div>
-        </div>
         <div class="product-card-body">
           <h3 class="product-name">Coarse Peanut Powder</h3>
           <p class="product-weight">12 oz jar · Wholesale Case of 18</p>
@@ -986,8 +980,7 @@
       if (!isOpen) item.classList.add('open');
     }}
   </script>
-
-<script>
+  <script>
   const carousels = {};
   document.querySelectorAll('.carousel').forEach(car => {
     const id = car.id;
@@ -1001,6 +994,7 @@
       dotsEl.appendChild(d);
     });
   });
+
   function goTo(id, index) {
     const car = document.getElementById(id);
     const imgs = car.querySelectorAll('.carousel-track img');
@@ -1010,7 +1004,10 @@
     car.querySelectorAll('.carousel-dots span').forEach((d, i) =>
       d.classList.toggle('active', i === carousels[id]));
   }
-  function moveCarousel(id, dir) { goTo(id, carousels[id] + dir); }
+
+  function moveCarousel(id, dir) {
+    goTo(id, carousels[id] + dir);
+  }
 </script>
 </body>
 </html>
